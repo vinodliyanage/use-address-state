@@ -37,5 +37,6 @@ export default defineConfig(({ mode }) => {
   // Dev/example build configuration
   return {
     plugins: [react()],
+    base: process.env.BASE_URL || "/",
   };
 });

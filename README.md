@@ -6,6 +6,8 @@
 
 A lightweight React hook for managing state in URL search params. Built with `useSyncExternalStore` for optimal performance and tear-free reads.
 
+**[Live Demo →](https://vinodliyanage.github.io/use-address-state/)**
+
 ## Why use-address-state?
 
 - **Tiny footprint** – ~1KB minified, zero dependencies
