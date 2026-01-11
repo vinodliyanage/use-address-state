@@ -23,20 +23,23 @@ export function useAddressState<T = string>(key: string, initialValue?: T) {
 
   const rawValue = useSyncExternalStore(subscribe, getSnapshot, () => null);
 
-  const value = rawValue === null ? initialValue : JSON.parse(rawValue);
+  const value: T = rawValue === null ? initialValue : JSON.parse(rawValue);
 
-  const setValue = useCallback((newValue: T | null) => {
-    const params = new URLSearchParams(window.location.search);
+  const setValue = useCallback(
+    (newValue: T | null) => {
+      const params = new URLSearchParams(window.location.search);
 
-    if (newValue == null) {
-      params.delete(key);
-    } else {
-      params.set(key, JSON.stringify(newValue));
-    }
+      if (newValue == null) {
+        params.delete(key);
+      } else {
+        params.set(key, JSON.stringify(newValue));
+      }
 
-    const newUrl = params.size ? `?${params}` : window.location.pathname;
-    window.history.pushState(null, "", newUrl);
-  }, [key]);
+      const newUrl = params.size ? `?${params}` : window.location.pathname;
+      window.history.pushState(null, "", newUrl);
+    },
+    [key]
+  );
 
   return [value, setValue] as const;
 }

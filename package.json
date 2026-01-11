@@ -1,6 +1,6 @@
 {
   "name": "use-address-state",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A lightweight React hook to sync state with URL search params using useSyncExternalStore",
   "type": "module",
   "main": "./dist/use-address-state.umd.cjs",
