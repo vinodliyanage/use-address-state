@@ -1,0 +1,30 @@
+# Source files
+src/
+*.ts
+!dist/**
+
+# Example app
+index.html
+
+# Config files
+tsconfig.json
+tsconfig.node.json
+vite.config.ts
+
+# Dev files
+node_modules/
+*.log
+.DS_Store
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+
+# Test files
+*.test.*
+*.spec.*
+__tests__/
