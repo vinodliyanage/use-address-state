@@ -43,7 +43,7 @@ const socialLinks = [
     isCustomIcon: true,
   },
   {
-    href: "https://stackoverflow.com/users/vinodliyanage",
+    href: "https://stackoverflow.com/users/15084645/vinod-liyanage",
     icon: StackOverflowIcon,
     label: "Stack Overflow",
     isCustomIcon: true,
