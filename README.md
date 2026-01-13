@@ -8,6 +8,8 @@ A lightweight React hook for managing state in URL search params. Built with `us
 
 **[Live Demo →](https://uas.vinodliyanage.me/)**
 
+**[View on npm →](https://www.npmjs.com/package/use-address-state)**
+
 ## Why use-address-state?
 
 - **Tiny footprint** – ~1KB minified, zero dependencies

@@ -1,7 +1,7 @@
 import { useAddressState } from "../../lib";
 
 export function CounterDemo() {
-  const [count, setCount] = useAddressState<number>("count", 0);
+  const [count, setCount] = useAddressState("count", 0);
 
   return (
     <section className="mb-12">
