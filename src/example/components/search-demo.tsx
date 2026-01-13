@@ -1,4 +1,18 @@
 import { useAddressState } from "../../lib";
+import { CodeToggle } from "./code-toggle";
+
+const CODE_SNIPPET = `// SearchBar.tsx
+const [query, setQuery] = useAddressState("search");
+
+<input
+  value={query || ""}
+  onChange={(e) => setQuery(e.target.value)}
+/>
+
+// SearchResults.tsx (different file, same key!)
+const [query] = useAddressState("search");
+
+<div>Showing results for "{query}"</div>`;
 
 export function SearchBar() {
   const [query, setQuery] = useAddressState("search");
@@ -40,6 +54,7 @@ export function SearchDemo() {
     <div className="space-y-3">
       <SearchBar />
       <SearchResults />
+      <CodeToggle code={CODE_SNIPPET} />
     </div>
   );
 }

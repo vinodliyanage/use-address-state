@@ -1,5 +1,15 @@
 import { useRef } from "react";
 import { useAddressState } from "../../lib";
+import { CodeToggle } from "./code-toggle";
+
+const CODE_SNIPPET = `// Counter A - subscribes to key "a"
+const [countA, setCountA] = useAddressState("a", 0);
+
+// Counter B - subscribes to key "b"
+const [countB, setCountB] = useAddressState("b", 0);
+
+// Static component - no useAddressState
+// Never re-renders when counters change!`;
 
 function RenderBadge({ count }: { count: number }) {
   return (
@@ -96,6 +106,7 @@ export function RerenderDemo() {
       <CounterA />
       <CounterB />
       <StaticComponent />
+      <CodeToggle code={CODE_SNIPPET} />
     </div>
   );
 }

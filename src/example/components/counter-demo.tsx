@@ -1,4 +1,13 @@
 import { useAddressState } from "../../lib";
+import { CodeToggle } from "./code-toggle";
+
+const CODE_SNIPPET = `const [count, setCount] = useAddressState("count", 0);
+
+// Increment
+<button onClick={() => setCount(count + 1)}>+</button>
+
+// Decrement
+<button onClick={() => setCount(count - 1)}>−</button>`;
 
 export function CounterDemo() {
   const [count, setCount] = useAddressState("count", 0);
@@ -29,6 +38,7 @@ export function CounterDemo() {
             </button>
           </div>
         </div>
+        <CodeToggle code={CODE_SNIPPET} />
       </div>
     </section>
   );

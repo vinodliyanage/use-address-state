@@ -2,6 +2,9 @@ import { Github, Linkedin, Package } from "lucide-react";
 import { RerenderDemo } from "./components/rerender-demo";
 import { SearchDemo } from "./components/search-demo";
 import { CounterDemo } from "./components/counter-demo";
+import { BooleanDemo } from "./components/boolean-demo";
+import { ArrayDemo } from "./components/array-demo";
+import { ObjectDemo } from "./components/object-demo";
 import { version } from "../../package.json";
 
 function StackOverflowIcon({ size = 18 }: { size?: number }) {
@@ -105,6 +108,15 @@ function App() {
 
         {/* Counter Demo */}
         <CounterDemo />
+
+        {/* Boolean Demo */}
+        <BooleanDemo />
+
+        {/* Array Demo */}
+        <ArrayDemo />
+
+        {/* Object Demo */}
+        <ObjectDemo />
 
         {/* Shared State Demo */}
         <section className="mb-12">

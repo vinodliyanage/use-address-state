@@ -62,5 +62,8 @@
     "vite": "^4.4.0",
     "vite-plugin-dts": "^3.9.1",
     "vitest": "^4.0.16"
+  },
+  "dependencies": {
+    "prism-react-renderer": "^2.4.1"
   }
 }
