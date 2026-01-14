@@ -10,13 +10,49 @@ A lightweight React hook for managing state in URL search params. Built with `us
 
 **[View on npm →](https://www.npmjs.com/package/use-address-state)**
 
-## Why use-address-state?
+## Motivation
 
-- **Tiny footprint** – ~1KB minified, zero dependencies
-- **Selective re-rendering** – Only components subscribed to changed keys re-render
-- **Shareable URLs** – State persists across page refreshes and link sharing
-- **Full TypeScript support** – Generic types for complete type safety
-- **Browser navigation** – Seamless back/forward button support
+Sometimes you want state that:
+
+- Survives page refreshes
+- Can be shared via URL
+- Supports browser back/forward navigation
+- Is accessible across components without prop drilling
+
+This library treats the URL as a client-side state container, giving you a `useState`-like API that syncs with URL search params.
+
+## How It Works
+
+1. **Reads** from `window.location.search` via `URLSearchParams`
+2. **Writes** using the native History API (`pushState`)
+3. **Syncs** across components using React's `useSyncExternalStore`
+
+Since it uses browser APIs directly (not React Router or Next.js router), it works alongside any routing solution without conflicts.
+
+**Isolated by design:** This library only reads and writes URL search params (`?key=value`). It never touches the pathname or interferes with your router's navigation state. Your routing library handles page transitions; this library handles temporary UI state in the query string. They operate in parallel, completely independent of each other.
+
+## Features
+
+- ~1KB minified, zero dependencies
+- Selective re-rendering per key
+- Full TypeScript support
+- SSR-safe with proper fallbacks
+- Works with CRA, Vite, Next.js, Remix, etc.
+
+## When to Use
+
+- Search inputs and filters
+- Pagination and sorting options
+- Tab or accordion state
+- Modal or drawer open/close state
+- Form wizard step tracking
+- Any UI state you want to persist across refreshes or share via link
+
+## Limitations
+
+- **Client-side only** – State lives in the browser URL, not on the server
+- **String-based storage** – Values are JSON-serialized; not ideal for large objects
+- **URL length limits** – Keep URLs under ~2000 chars for compatibility; avoid storing large data
 
 ## Installation
 
@@ -114,6 +150,8 @@ function CounterB() {
 }
 ```
 
+For more interactive examples, check out the **[Live Demo →](https://uas.vinodliyanage.me/)**
+
 ## Requirements
 
 - React 18.0.0 or higher
@@ -121,7 +159,31 @@ function CounterB() {
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Here's how to get started:
+
+```bash
+# Clone the repo
+git clone https://github.com/vinodliyanage/use-address-state.git
+cd use-address-state
+
+# Install dependencies
+pnpm install
+
+# Start dev server (runs the demo app)
+pnpm dev
+
+# Run tests
+pnpm test
+
+# Build the library
+pnpm build:lib
+```
+
+**Before submitting a PR:**
+
+- Run tests with `pnpm test`
+- Keep changes focused and minimal
+- Update documentation if needed
 
 ## License
 
