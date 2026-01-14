@@ -1,4 +1,4 @@
-import { useAddressState } from "../../lib";
+import { useAddressState } from "@/lib";
 import { CodeToggle } from "./code-toggle";
 
 const CODE_SNIPPET = `const [count, setCount] = useAddressState("count", 0);

@@ -38,5 +38,10 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react()],
     base: process.env.BASE_URL || "/",
+    resolve: {
+      alias: {
+        "@": resolve(__dirname, "src"),
+      },
+    },
   };
 });

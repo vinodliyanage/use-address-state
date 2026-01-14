@@ -1,4 +1,4 @@
-import { useAddressState } from "../../lib";
+import { useAddressState } from "@/lib";
 import { CodeToggle } from "./code-toggle";
 
 const CODE_SNIPPET = `// SearchBar.tsx
@@ -51,10 +51,14 @@ export function SearchResults() {
 
 export function SearchDemo() {
   return (
-    <div className="space-y-3">
-      <SearchBar />
-      <SearchResults />
-      <CodeToggle code={CODE_SNIPPET} />
-    </div>
+    <section className="mb-12">
+      <h2 className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-4">Shared State</h2>
+      <p className="text-neutral-400 text-sm mb-4">Two components in different files share the same URL state key</p>
+      <div className="space-y-3">
+        <SearchBar />
+        <SearchResults />
+        <CodeToggle code={CODE_SNIPPET} />
+      </div>
+    </section>
   );
 }

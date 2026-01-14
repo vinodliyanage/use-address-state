@@ -1,6 +1,6 @@
 import { X } from "lucide-react";
 import { useState } from "react";
-import { useAddressState } from "../../lib";
+import { useAddressState } from "@/lib";
 import { CodeToggle } from "./code-toggle";
 
 const CODE_SNIPPET = `const [tags, setTags] = useAddressState<string[]>("tags", []);

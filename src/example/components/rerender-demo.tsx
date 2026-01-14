@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { useAddressState } from "../../lib";
+import { useAddressState } from "@/lib";
 import { CodeToggle } from "./code-toggle";
 
 const CODE_SNIPPET = `// Counter A - subscribes to key "a"
@@ -102,11 +102,15 @@ function StaticComponent() {
 
 export function RerenderDemo() {
   return (
-    <div className="space-y-2">
-      <CounterA />
-      <CounterB />
-      <StaticComponent />
-      <CodeToggle code={CODE_SNIPPET} />
-    </div>
+    <section className="mb-12">
+      <h2 className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-4">Selective Re-rendering</h2>
+      <p className="text-neutral-400 text-sm mb-4">Only components subscribed to changed keys re-render</p>
+      <div className="space-y-2">
+        <CounterA />
+        <CounterB />
+        <StaticComponent />
+        <CodeToggle code={CODE_SNIPPET} />
+      </div>
+    </section>
   );
 }

@@ -1,5 +1,5 @@
 import { RotateCcw } from "lucide-react";
-import { useAddressState } from "../../lib";
+import { useAddressState } from "@/lib";
 import { CodeToggle } from "./code-toggle";
 
 interface Profile {
