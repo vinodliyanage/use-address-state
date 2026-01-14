@@ -43,7 +43,7 @@
   "bugs": {
     "url": "https://github.com/vinodliyanage/use-address-state/issues"
   },
-  "homepage": "https://github.com/vinodliyanage/use-address-state#readme",
+  "homepage": "https://uas.vinodliyanage.me",
   "peerDependencies": {
     "react": ">=18.0.0"
   },

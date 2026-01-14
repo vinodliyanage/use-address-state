@@ -15,6 +15,7 @@ export default defineConfig(({ mode }) => {
           rollupTypes: true,
         }),
       ],
+      publicDir: false, // Don't copy public folder for library build
       build: {
         lib: {
           entry: resolve(__dirname, "src/lib/index.ts"),
